@@ -23,12 +23,13 @@ def get_definition():
     user_input.setText("")
     definition_area.setPlainText(f"{word}: {definition}")
 
-
+# create application layout and window
 app = QApplication([])
 window = QWidget()
 window.setWindowTitle("Dictionary GUI")
 main_layout = QVBoxLayout()
 
+# make GUI components and add to layout
 instructions = QLabel("Enter the word you need the definition of: ")
 main_layout.addWidget(instructions)
 
@@ -43,7 +44,7 @@ definition_area.setWordWrapMode(QTextOption.WrapMode.WrapAtWordBoundaryOrAnywher
 definition_area.setSizePolicy(
     QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding
 )
-
+# create scroll area for long text
 scroll_area.setWidget(definition_area)
 scroll_area.setFixedHeight(100)
 
